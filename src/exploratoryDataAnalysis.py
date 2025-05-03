@@ -2,10 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-def load_data(file_path):
-    data = pd.read_csv(file_path, sep=';')
-    return data
-
 def basic_info(data):	
     print("Dataset Information:")
     print(data.info())
@@ -51,12 +47,3 @@ def feature_analysis(data, target_column):
 def full_feature_analysis(data):
     for column in data.columns:
         feature_analysis(data, column)
-    
-
-def main():
-    data = load_data('data.csv')
-
-    full_feature_analysis(data)
-
-if __name__ == "__main__":
-    main()
