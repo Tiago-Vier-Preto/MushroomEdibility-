@@ -22,7 +22,7 @@ def KnnClassifier(X_train, y_train, X_test, y_test):
     f1 = f1_score(y_test, y_pred, average='weighted')
     specificity = calculate_specificity(y_test, y_pred)
     
-    return accuracy, precision, specificity, f1
+    return precision, accuracy, specificity, f1
 
 def naive_bayes_classifier(X_train, y_train, X_test, y_test):
     gnb = GaussianNB()
@@ -34,7 +34,7 @@ def naive_bayes_classifier(X_train, y_train, X_test, y_test):
     f1 = f1_score(y_test, y_pred, average='weighted')
     specificity = calculate_specificity(y_test, y_pred)
     
-    return accuracy, precision, specificity, f1
+    return precision, accuracy, specificity, f1
 
 def decision_tree_classifier(X_train, y_train, X_test, y_test):
     dtc = DecisionTreeClassifier()
@@ -46,7 +46,7 @@ def decision_tree_classifier(X_train, y_train, X_test, y_test):
     f1 = f1_score(y_test, y_pred, average='weighted')
     specificity = calculate_specificity(y_test, y_pred)
     
-    return accuracy, precision, specificity, f1
+    return precision, accuracy, specificity, f1
 
 def logistic_regression_classifier(X_train, y_train, X_test, y_test):
     lr = LogisticRegression(max_iter=1000)
@@ -58,10 +58,10 @@ def logistic_regression_classifier(X_train, y_train, X_test, y_test):
     f1 = f1_score(y_test, y_pred, average='weighted')
     specificity = calculate_specificity(y_test, y_pred)
     
-    return accuracy, precision, specificity, f1
+    return precision, accuracy, specificity, f1
 
 def mlp_classifier(X_train, y_train, X_test, y_test):
-    mlp = MLPClassifier(hidden_layer_sizes=(100,), max_iter=1000)
+    mlp = MLPClassifier(hidden_layer_sizes=(10,10), max_iter=1000)
     mlp.fit(X_train, y_train)
     y_pred = mlp.predict(X_test)
 
@@ -70,4 +70,4 @@ def mlp_classifier(X_train, y_train, X_test, y_test):
     f1 = f1_score(y_test, y_pred, average='weighted')
     specificity = calculate_specificity(y_test, y_pred)
     
-    return accuracy, precision, specificity, f1
+    return precision, accuracy, specificity, f1

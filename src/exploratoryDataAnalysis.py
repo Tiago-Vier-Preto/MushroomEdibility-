@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from ydata_profiling import ProfileReport
 
 def basic_info(data):	
     print("Dataset Information:")
@@ -47,3 +48,6 @@ def feature_analysis(data, target_column):
 def full_feature_analysis(data):
     for column in data.columns:
         feature_analysis(data, column)
+
+def generate_report(data):
+    ProfileReport(data, title="Relatório EDA", explorative=True).to_file("relatorio.html")
