@@ -1,11 +1,6 @@
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-import matplotlib.gridspec as gridspec
 from src.utils import load_data
 from src.preProcessingData import pre_process_data
-from src.exploratoryDataAnalysis import full_feature_analysis
-from src.train import train_model
+from src.trainOpt import train_model
 
 
 def main():
