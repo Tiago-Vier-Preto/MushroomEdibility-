@@ -116,7 +116,7 @@ if __name__ == "__main__":
     print("Hyperparameter optimization start:\n")
 
     x_train_val, x_test, y_train_val, y_test = train_test_split(
-        x_data, y_full, test_size=0.2, random_state=RANDOM_STATE, stratify=y_data
+        x_data, y_full, test_size=0.2, random_state=RANDOM_STATE, stratify=y_full
     )
 
     optimize_args = {
