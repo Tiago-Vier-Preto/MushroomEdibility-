@@ -124,11 +124,11 @@ if __name__ == "__main__":
         "show_progress_bar": True
     }
 
-    #print(f"----- Optimizing KNN -----\n")
-    #study_knn = optuna.create_study(direction='maximize', study_name='knn_optimization')
-    #study_knn.optimize(lambda trial: objective_knn(trial, x_train_val, y_train_val, normalize_columns), **optimize_args)
-    #print("\nBest KNN Hyperparameters:", study_knn.best_params)
-    #print(f"Best KNN Cross-Validated Precision: {study_knn.best_value:.4f}\n")
+    print(f"----- Optimizing KNN -----\n")
+    study_knn = optuna.create_study(direction='maximize', study_name='knn_optimization')
+    study_knn.optimize(lambda trial: objective_knn(trial, x_train_val, y_train_val, normalize_columns), **optimize_args)
+    print("\nBest KNN Hyperparameters:", study_knn.best_params)
+    print(f"Best KNN Cross-Validated Precision: {study_knn.best_value:.4f}\n")
 
     print(f"----- Optimizing Decision Tree -----\n")
     study_dt = optuna.create_study(direction='maximize', study_name='dt_optimization')
