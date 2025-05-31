@@ -48,7 +48,6 @@ def pre_process_data(data):
     data = remove_specific_columns(data, ['has-ring']) 
     data = replace_missing_values_with_most_frequent(data, ['gill-spacing'])
     data = replace_missing_values_with_unknown(data, ['cap-surface', 'gill-attachment', 'ring-type'])
-    data = normalize_data(data)
     data = transform_categorical_to_numerical(data, ['cap-shape',  'cap-surface', 'cap-color', 'does-bruise-or-bleed', 'gill-attachment', 'gill-spacing', 'gill-color', 'stem-color', 'ring-type', 'habitat', 'season'])	
     data = data.reset_index(drop=True)
     return data
