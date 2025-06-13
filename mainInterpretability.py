@@ -1,4 +1,3 @@
-import pandas as pd
 from src.utils import load_data
 from src.preProcessingData import pre_process_data
 from src.trainOpt import normalize_specific_columns

@@ -34,14 +34,6 @@ def transform_categorical_to_numerical(data, categorical_columns):
     data = pd.get_dummies(data, columns=categorical_columns, drop_first=True, dtype=int)
     return data
 
-def normalize_data(data):
-    numerical_columns = data.select_dtypes(include=['int64', 'float64']).columns
-    for column in numerical_columns:
-        min_val = data[column].min()
-        max_val = data[column].max()
-        data[column] = (data[column] - min_val) / (max_val - min_val)
-    return data
-
 def pre_process_data(data):
     data = remove_duplicates(data)
     data = remove_attributes_with_missing_values(data, threshold=0.5)

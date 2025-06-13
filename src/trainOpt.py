@@ -1,5 +1,5 @@
 from src.models import KnnClassifier, decision_tree_classifier, mlp_classifier
-from sklearn.model_selection import StratifiedKFold # Changed from KFold
+from sklearn.model_selection import StratifiedKFold
 import numpy as np
 
 def train_model(X, y):

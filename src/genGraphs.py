@@ -9,7 +9,6 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, PrecisionRecallDisplay, accuracy_score, precision_score, f1_score
 
 def normalize_specific_columns(train_data, test_data, columns):
-    """Normaliza colunas específicas de um conjunto de dados de treino e teste."""
     train_data = train_data.copy()
     test_data = test_data.copy()
 
@@ -26,7 +25,6 @@ def normalize_specific_columns(train_data, test_data, columns):
     return train_data, test_data
 
 def calculate_specificity(y_true, y_pred):
-    """Calcula a especificidade a partir da matriz de confusão."""
     cm = confusion_matrix(y_true, y_pred)
     if cm.shape == (2, 2):
         tn, fp, fn, tp = cm.ravel()
@@ -47,7 +45,6 @@ df_processed = pre_process_data(df_raw)
 target_column = df_processed.columns[0]
 y = df_processed[target_column].map({'p': 0, 'e': 1})
 X = df_processed.drop(columns=[target_column])
-print("Coluna alvo convertida: 'p' -> 0, 'e' -> 1.")
 
 models_config = {
     'KNN': KNeighborsClassifier(n_neighbors=3, weights='distance', metric='minkowski', p=5),
